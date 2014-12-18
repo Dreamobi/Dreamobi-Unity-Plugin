@@ -1,0 +1,11 @@
+fileFormatVersion: 2
+guid: 54b8f867a62a84c27a6ff7aaae18df3f
+MonoImporter:
+  serializedVersion: 2
+  defaultReferences:
+  - downTexture: {fileID: 2800000, guid: c4e3147acaa6a480e81876a72a3cbaa7, type: 3}
+  - hoverTexture: {fileID: 2800000, guid: 54775d9c9fb464d0c83faac9903b4bbe, type: 3}
+  - upTexture: {fileID: 2800000, guid: f31c62d70a4cf49a6b2fea4fe8f4928d, type: 3}
+  executionOrder: 0
+  icon: {instanceID: 0}
+  userData: 

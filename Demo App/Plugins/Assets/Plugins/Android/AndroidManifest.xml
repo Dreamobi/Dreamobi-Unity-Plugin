@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+      package="com.dreamobi.unitytest"
+      android:versionCode="1"
+      android:versionName="1.0">
+    <!-- TODO: Replace the 'package' value above to reflect your app's package id. -->
+
+    <!-- NOTE: Adjust minSDKVersion and targetSdkVersion as desired. -->
+    <uses-sdk android:minSdkVersion="10" android:targetSdkVersion="19" />
+
+    <!-- NOTE: You must have at least these four permissions for Dreamobi. -->
+    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+    <uses-permission android:name="android.permission.ACCESS_WIFI_STATE" />
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+
+    <application android:label="@string/dreamobi_app_name" android:icon="@drawable/dreamobi_app_icon" android:hardwareAccelerated="true">
+
+		<meta-data android:name="com.google.android.gms.version" android:value="6171000" />
+
+		<!-- NOTE: If using your own alternate version of UnityPlayerActivity, please make sure that  it does not
+         quit() the Unity player in the onDestroy() event handler or try to use 'com.dreamobi.unitydre.UnityDreamobiActivity'-->
+        <activity android:name="com.unity3d.player.UnityPlayerNativeActivity"
+                  android:configChanges="keyboardHidden|orientation|screenSize"
+                  android:label="@string/dreamobi_app_name">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+
+            <meta-data android:name="unityplayer.UnityActivity" android:value="true" />
+            <meta-data android:name="unityplayer.ForwardNativeEventsToDalvik" android:value="true" />
+        </activity>
+
+        <!-- NOTE: You must include these two activity specifications for Dreamobi. -->
+        <activity
+            android:name="com.dreamobi.dac.FullScreenActivity"
+            android:configChanges="orientation|keyboardHidden|screenSize"
+            android:theme="@android:style/Theme.NoTitleBar.Fullscreen" >
+        </activity>
+        
+        <activity
+            android:name="com.dreamobi.dac.InterstitialActivity"
+            android:theme="@android:style/Theme.Translucent.NoTitleBar.Fullscreen" >
+        </activity>
+
+    </application>
+</manifest>
